@@ -1,0 +1,57 @@
+apply plugin: idName
+
+System.out.println(rootProject.idName)
+
+android {
+    namespace 'com.jtl.arouter_login'
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 30
+        targetSdk 32
+        if (isApplication){
+            applicationId "com.jtl.arouter_login"
+
+            versionCode 1
+            versionName "1.0"
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+
+        main{
+            manifest{
+                if (isApplication){
+                    manifest.srcFile 'src/AndroidManifest.xml'
+                }else{
+                    manifest.srcFile  "src/main/AndroidManifest.xml"
+
+                }
+
+            }
+        }
+    }
+}
+
+dependencies {
+     api project(":arouter:arouter_base")
+}
+
+apply from: rootProject.file('gradle/publish.gradle')

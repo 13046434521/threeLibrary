@@ -18,7 +18,5 @@ public class Router$$BindView {
             Log.w("Router$$BindView",view+"");
             // activity.key = activity.findViewById(value);
         });
-
     }
-
 }

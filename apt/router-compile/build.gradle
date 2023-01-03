@@ -1,0 +1,17 @@
+plugins {
+    id 'java-library'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation project(path: ':apt:router-annotation')
+    // google 自动生成注解的库
+    annotationProcessor 'com.google.auto.service:auto-service:1.0.1'
+    compileOnly 'com.google.auto.service:auto-service-annotations:1.0.1'
+    // javapoet库，帮助生成Java类的库
+    implementation 'com.squareup:javapoet:1.13.0'
+}

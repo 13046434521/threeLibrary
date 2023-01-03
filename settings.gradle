@@ -17,3 +17,8 @@ rootProject.name = "threeLibrary"
 include ':arouter:arouter_demo'
 include ':arouter:arouter_login'
 include ':arouter:arouter_base'
+include ':apt'
+include ':apt:router-annotation'
+include ':apt:router-compile'
+include ':apt:apt-demo'
+include ':apt:router-api'

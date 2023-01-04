@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/apt" />
+            <option value="$PROJECT_DIR$/apt/apt-demo" />
+            <option value="$PROJECT_DIR$/apt/router-annotation" />
+            <option value="$PROJECT_DIR$/apt/router-api" />
+            <option value="$PROJECT_DIR$/apt/router-compile" />
+            <option value="$PROJECT_DIR$/arouter" />
+            <option value="$PROJECT_DIR$/arouter/arouter_base" />
+            <option value="$PROJECT_DIR$/arouter/arouter_demo" />
+            <option value="$PROJECT_DIR$/arouter/arouter_login" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

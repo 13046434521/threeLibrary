@@ -2,7 +2,11 @@ package com.jtl.router_api;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,33 +29,27 @@ public class Router {
         }
     }
 
-    public void init(Context application){
-
-    }
-
-//    public void inject(Activity activity){
-//        // 1. 通过注册，获取生成的类
-//        // 2. 生成的类里有id和名称
-//        // 3. 将activity传入辅助类中，for循环生成findviewbyid
-//        classMap.get(activity);
-//        router$$BindView.init(activity);
-//    }
 
     public void inject(Activity activity){
         try {
-            Class clazz = Class.forName(activity.getPackageName()+activity.getLocalClassName()+"$$BindView");
-            IBindView bindView = (IBindView) clazz.newInstance();
-            bindView.init(activity);
+            Class clazz = Class.forName(activity.getPackageName()+"."+activity.getLocalClassName()+"$$BindView");
+            Constructor constructor = clazz.getConstructor();
 
-        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException e) {
+            Method[] methods = clazz.getDeclaredMethods();
+            for (Method method:methods){
+                Log.w("inject",method.getName()+" --- "+activity.getClass());
+            }
+
+            Object bindView = constructor.newInstance(null);
+            constructor.setAccessible(true);
+
+            Method bindViewMethod = clazz.getDeclaredMethod("init",activity.getClass());
+            bindViewMethod.invoke(bindView,activity);
+
+
+        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | NoSuchMethodException | InvocationTargetException e) {
             e.printStackTrace();
         }
-
-        // 1. 通过注册，获取生成的类
-        // 2. 生成的类里有id和名称
-        // 3. 将activity传入辅助类中，for循环生成findviewbyid
-        classMap.get(activity);
-        router$$BindView.init(activity);
     }
 
     private static class RouterHolder {

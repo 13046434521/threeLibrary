@@ -117,8 +117,9 @@ public class RouterProcessor extends AbstractProcessor {
 
         String className = beforeClassName+afterClassName;
         messager.printMessage(Diagnostic.Kind.OTHER, className);
-        TypeSpec typeSpec = TypeSpec.classBuilder(className)
 
+        TypeSpec typeSpec = TypeSpec.classBuilder(className)
+                .addModifiers(Modifier.PUBLIC)
                 .addMethod(methodSpec)
                 .build();
 

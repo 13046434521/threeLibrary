@@ -26,11 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
         Router.getInstance().inject(this);
 
-        MainActivity$$BindView mainActivity$$BindView = new MainActivity$$BindView();
-        mainActivity$$BindView.init(this);
+//        MainActivity$$BindView mainActivity$$BindView = new MainActivity$$BindView();
+//        mainActivity$$BindView.init(this);
 
-        // 希望
-        Router.getInstance().inject(this);
 
         textview.setText("可以类啊");
     }

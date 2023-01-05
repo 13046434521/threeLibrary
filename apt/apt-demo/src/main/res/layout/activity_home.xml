@@ -6,5 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity"
     android:id="@+id/constraint_home_layout">
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="这里是home页面"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

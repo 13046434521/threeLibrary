@@ -8,8 +8,9 @@ import android.widget.TextView;
 
 import com.jtl.router_annotation.Route;
 import com.jtl.router_api.BindView;
+import com.jtl.router_api.Router;
 
-@Route(path = "qunima")
+@Route(path = "/apt/main")
 public class MainActivity extends AppCompatActivity {
 
     @com.jtl.router_annotation.BindView(id = R.id.tv_main_content)
@@ -23,10 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         BindView.getInstance().inject(this);
 
-//        MainActivity$$BindView mainActivity$$BindView = new MainActivity$$BindView();
-//        mainActivity$$BindView.init(this);
-
-
+        Router.getInstance().navigation(this,"/demo/home");
         textview.setText("可以类啊");
     }
 }

@@ -31,9 +31,9 @@ public class BindView {
             for (Method method:methods){
                 Log.w("inject",method.getName()+" --- "+activity.getClass());
             }
-
-            Object bindView = constructor.newInstance((Object) null);
             constructor.setAccessible(true);
+            Object bindView = constructor.newInstance();
+
 
             Method bindViewMethod = clazz.getDeclaredMethod("init",activity.getClass());
             bindViewMethod.invoke(bindView,activity);

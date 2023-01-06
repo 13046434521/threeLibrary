@@ -2,7 +2,7 @@ package com.jtl.aptdemo;
 
 import android.app.Application;
 
-import com.jtl.router_api.Router;
+import com.jtl.router_api.router.Router;
 
 public class AppApplication extends Application {
     @Override

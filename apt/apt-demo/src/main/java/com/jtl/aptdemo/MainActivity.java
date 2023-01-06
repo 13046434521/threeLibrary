@@ -7,8 +7,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jtl.router_annotation.Route;
-import com.jtl.router_api.BindView;
-import com.jtl.router_api.Router;
+import com.jtl.router_api.bindview.BindView;
+import com.jtl.router_api.router.Router;
 
 @Route(path = "/apt/main")
 public class MainActivity extends AppCompatActivity {
@@ -24,7 +24,12 @@ public class MainActivity extends AppCompatActivity {
 
         BindView.getInstance().inject(this);
 
-        Router.getInstance().navigation(this,"/demo/home");
+        Router.getInstance().build("/demo/home")
+                .withData("int",123)
+                .withData("path","你好啊")
+                .withData("imageId",R.mipmap.shazi)
+                .navigation();
+
         textview.setText("可以类啊");
     }
 }

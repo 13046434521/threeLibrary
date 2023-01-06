@@ -1,4 +1,4 @@
-package com.jtl.router_api;
+package com.jtl.router_api.bindview;
 
 import android.app.Activity;
 import android.util.Log;
@@ -6,8 +6,7 @@ import android.util.Log;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.Map;
+
 /**
  * 作者:jtl
  * 日期:Created in 2023/1/4 19:46

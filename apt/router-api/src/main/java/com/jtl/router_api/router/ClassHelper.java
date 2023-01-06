@@ -1,4 +1,4 @@
-package com.jtl.router_api;
+package com.jtl.router_api.router;
 
 import android.text.TextUtils;
 
@@ -13,11 +13,11 @@ import java.util.HashMap;
  * 更改:
  */
 public class ClassHelper {
-    private String path;
-    private Class aClass;
-    private Constructor constructor;
-    private HashMap<String, Method> methodHashMap;
-    private Object instance;
+    private final String path;
+    private final Class aClass;
+    private final Constructor constructor;
+    private final HashMap<String, Method> methodHashMap;
+    private final Object instance;
 
     public ClassHelper(String path, Class aClass, Constructor constructor, HashMap<String, Method> methodHashMap, Object instance) {
         this.path = path;

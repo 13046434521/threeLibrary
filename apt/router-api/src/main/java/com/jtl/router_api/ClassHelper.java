@@ -1,15 +1,22 @@
 package com.jtl.router_api;
 
+import android.text.TextUtils;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
-
+/**
+ * 作者:jtl
+ * 日期:Created in 2023/1/6 01:46
+ * 描述:反射辅助类，建造者模式
+ * 更改:
+ */
 public class ClassHelper {
     private String path;
     private Class aClass;
     private Constructor constructor;
-    private HashMap<String, Method> methodHashMap = new HashMap<>();
+    private HashMap<String, Method> methodHashMap;
     private Object instance;
 
     public ClassHelper(String path, Class aClass, Constructor constructor, HashMap<String, Method> methodHashMap, Object instance) {
@@ -69,6 +76,9 @@ public class ClassHelper {
         }
 
         public ClassBuilder compileClass() {
+            if (TextUtils.isEmpty(path))
+                return null;
+
             try {
                 aClass = Class.forName(path);
             } catch (ClassNotFoundException e) {

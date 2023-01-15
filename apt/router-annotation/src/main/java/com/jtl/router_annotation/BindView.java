@@ -8,5 +8,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.CLASS)
 public @interface BindView {
+    int a = 10;
+    String b = "内容";
     int id();
 }

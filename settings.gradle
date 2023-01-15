@@ -3,6 +3,7 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
+
     }
 }
 dependencyResolutionManagement {
@@ -13,7 +14,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "threeLibrary"
-// include ':app'
+
 include ':arouter:arouter_demo'
 include ':arouter:arouter_login'
 include ':arouter:arouter_base'
@@ -22,3 +23,11 @@ include ':apt:router-annotation'
 include ':apt:router-compile'
 include ':apt:apt-demo'
 include ':apt:router-api'
+
+include ':rxjava'
+include ':rxjava:rxjava_demo'
+
+include ':duanzile-app'
+include ':duanzile-app:duanzile-java'
+include ':duanzile-app:duanzile-kt'
+include ':duanzile-app:duanzile-lib'

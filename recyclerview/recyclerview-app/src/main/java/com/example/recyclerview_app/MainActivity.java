@@ -19,10 +19,10 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.rv_main_content);
 
 
-        ArrayList<String> list = new ArrayList<>();
+        ArrayList<Data> list = new ArrayList<>();
 
         for (int i = 0; i < 100; i++) {
-            list.add("测试："+i);
+            list.add(new Data("测试："+i,R.mipmap.ic_ice,i%2));
         }
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);

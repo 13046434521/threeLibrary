@@ -19,9 +19,9 @@ import java.util.List;
  * Detail（详情）：
  */
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    List<String> list = new ArrayList<>();
+    List<Data> list = new ArrayList<>();
 
-    public MyAdapter(List<String> list) {
+    public MyAdapter(List<Data> list) {
         this.list = list;
     }
 
@@ -29,11 +29,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = null;
-        if (viewType==1){
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_image,null);
-        }else{
+        View view;
+        if (viewType==0){
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_text,null);
+        }else{
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_image,null);
         }
 
         MyViewHolder myViewHolder = new MyViewHolder(view,viewType);
@@ -42,9 +42,22 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.textView.setText(list.get(position));
+        int type = getItemViewType(position);
+        switch (type){
+            case 0:
+                holder.textView.setText(list.get(position).data);
+                break;
+            case 1:
+                holder.imageView.setImageResource(list.get(position).imageId);
+                break;
+        }
+
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        return list.get(position).type;
+    }
 
     @Override
     public int getItemCount() {
@@ -52,20 +65,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-
-        int type = 0;
         TextView textView;
         ImageView imageView;
 
         public MyViewHolder(@NonNull View itemView, int type) {
             super(itemView);
-            this.type = type;
-            if (type == 1){
-                imageView = itemView.findViewById(R.id.rv_image_content);
-            }else{
+            if (type == 0){
                 textView = itemView.findViewById(R.id.rv_text_content);
+            }else{
+                imageView = itemView.findViewById(R.id.rv_image_content);
             }
-
         }
     }
 }

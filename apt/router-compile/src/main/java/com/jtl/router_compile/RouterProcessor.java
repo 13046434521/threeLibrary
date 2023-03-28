@@ -71,10 +71,7 @@ public class RouterProcessor extends AbstractProcessor {
             return;
         }
 
-
-
         // 我需要拿到path 和 当前的全类名：包名+类名
-
         HashMap<String,String> clazzMap = new HashMap<>();
         String packageName ="";
         for (Element element:routeSet){

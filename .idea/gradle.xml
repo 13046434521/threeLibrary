@@ -7,6 +7,7 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="Embedded JDK" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -19,6 +20,14 @@
             <option value="$PROJECT_DIR$/arouter/arouter_base" />
             <option value="$PROJECT_DIR$/arouter/arouter_demo" />
             <option value="$PROJECT_DIR$/arouter/arouter_login" />
+            <option value="$PROJECT_DIR$/duanzile-app" />
+            <option value="$PROJECT_DIR$/duanzile-app/duanzile-java" />
+            <option value="$PROJECT_DIR$/duanzile-app/duanzile-kt" />
+            <option value="$PROJECT_DIR$/duanzile-app/duanzile-lib" />
+            <option value="$PROJECT_DIR$/recyclerview" />
+            <option value="$PROJECT_DIR$/recyclerview/recyclerview-app" />
+            <option value="$PROJECT_DIR$/rxjava" />
+            <option value="$PROJECT_DIR$/rxjava/rxjava_demo" />
           </set>
         </option>
       </GradleProjectSettings>

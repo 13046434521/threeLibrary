@@ -19,6 +19,13 @@
         <module name="threeLibrary.apt.router-compile.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.7" />
+    <bytecodeTargetLevel target="1.7">
+      <module name="threeLibrary.app-duanzile.duanzile-java" target="11" />
+      <module name="threeLibrary.app-duanzile.duanzile-kt" target="11" />
+      <module name="threeLibrary.rxjava.RxJava" target="1.8" />
+      <module name="threeLibrary.rxjava.RxJava.jmh" target="1.8" />
+      <module name="threeLibrary.rxjava.RxJava.main" target="1.8" />
+      <module name="threeLibrary.rxjava.RxJava.test" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

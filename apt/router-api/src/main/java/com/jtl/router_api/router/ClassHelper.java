@@ -78,7 +78,6 @@ public class ClassHelper {
         public ClassBuilder compileClass() {
             if (TextUtils.isEmpty(path))
                 return null;
-
             try {
                 aClass = Class.forName(path);
             } catch (ClassNotFoundException e) {
